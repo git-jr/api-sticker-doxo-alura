@@ -1,9 +1,7 @@
 package br.com.alura.linguagens.api;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.ToIntFunction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
