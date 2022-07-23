@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -23,7 +24,7 @@ public class LinguagemController {
 
     @GetMapping("/linguagens")
     public List<Linguagem> obterLinguagens() {
-        List<Linguagem> linguagens = repositorio.findAll(Sort.by(Sort.Direction.ASC,"ranking"));
+        List<Linguagem> linguagens = repositorio.findAll(Sort.by(Sort.Direction.DESC,"ranking"));
 
         return linguagens;
     }
@@ -54,5 +55,13 @@ public class LinguagemController {
         return linguagem.get();
     }
 
+    @PatchMapping("/vote/{id}")
+    public Linguagem votaLinguagem(@PathVariable String id){
+        var linguagem = repositorio.findById(id)
+        .orElseThrow( () -> new IllegalArgumentException("Falha na votação, id não encontrado"));
+
+        linguagem.setRanking(linguagem.getRanking()+1);
+        return repositorio.save(linguagem);
+    }
 
 }
