@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.function.ToIntFunction;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,11 +25,7 @@ public class LinguagemController {
 
     @GetMapping("/linguagens")
     public List<Linguagem> obterLinguagens() {
-        List<Linguagem> linguagens = repositorio.findAll();
-
-        ToIntFunction<Linguagem> ordenarPorRanking = l -> l.getRanking();
-        Comparator<Linguagem> compararRanking = Comparator.comparingInt(ordenarPorRanking);
-        linguagens.sort(compararRanking);
+        List<Linguagem> linguagens = repositorio.findAll(Sort.by(Sort.Direction.ASC,"ranking"));
 
         return linguagens;
     }
