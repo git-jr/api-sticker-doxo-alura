@@ -14,3 +14,15 @@ API desenvolvida durante a primeira utilizando Spring Boot e MongoDB para ser us
 - `Spring Boot`
 - `Heroku`
 - `MongoDB`
+
+## 🎯 Endpoints
+
+| VERBO   |  |
+| ---    | ---       |
+| GET  | `https://sticker-doxo-api.herokuapp.com/linguagens`          |
+| GET  | `https://sticker-doxo-api.herokuapp.com/linguagens/{id}`     |
+| POST | `https://sticker-doxo-api.herokuapp.com/linguagens`          |
+| PUT  | `https://sticker-doxo-api.herokuapp.com/linguagens/{id}`     |
+| DELETE  | `https://sticker-doxo-api.herokuapp.com/linguagens/{id}`     |
+| PATCH (Votação)  |    `https://sticker-doxo-api.herokuapp.com/vote/{id}`|
+
