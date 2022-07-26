@@ -26,3 +26,10 @@ API desenvolvida durante a primeira utilizando Spring Boot e MongoDB para ser us
 | DELETE  | `https://sticker-doxo-api.herokuapp.com/linguagens/{id}`     |
 | PATCH (Votação)  |    `https://sticker-doxo-api.herokuapp.com/vote/{id}`|
 
+
+| Vitrine.Dev |     |
+| -------------  | --- |
+| ✨ Nome        | Alura Sticker Doxo
+| 🏷️ Tecnologias | Java, Spring, MongoDB, Heroku, Git
+| 🚀 URL         | https://github.com/git-jr/sticker-doxo-alura
+| 🤿 Desafio | https://www.alura.com.br/imersao-java
